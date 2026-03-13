@@ -1,12 +1,11 @@
+import javax.swing.SwingUtilities;
+
 public class Main {
-
     public static void main(String[] args) {
-
-        PaymentMethod paypal = new PaypalAdapter(new PaypalAPI());
-        Payment payment = new DigitalPayment(paypal);
-
-        payment.makePayment(100);
-
+        // Swing debe ejecutarse en el Event Dispatch Thread para evitar errores visuales
+        SwingUtilities.invokeLater(() -> {
+            PaymentGUI ventana = new PaymentGUI();
+            ventana.setVisible(true); // Esto hace que la ventana sea visible
+        });
     }
-
 }
