@@ -1,5 +1,3 @@
 public interface PaymentMethod {
-
-    void processPayment(double amount);
-
+    boolean processPayment(double amount);
 }
