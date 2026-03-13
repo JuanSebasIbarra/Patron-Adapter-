@@ -1,11 +1,20 @@
-import javax.swing.SwingUtilities;
 
+
+/**
+ * Entry point for the Payment Module demo.
+ *
+ * Run from the project root:
+ *   javac -d out payment/*.java
+ *   java  -cp out payment.Main
+ *
+ * The program launches the Swing UI.  All console output from the
+ * processors is redirected into the in-window log panel automatically.
+ */
 public class Main {
+
     public static void main(String[] args) {
-        // Swing debe ejecutarse en el Event Dispatch Thread para evitar errores visuales
-        SwingUtilities.invokeLater(() -> {
-            PaymentGUI ventana = new PaymentGUI();
-            ventana.setVisible(true); // Esto hace que la ventana sea visible
-        });
+        System.out.println("=== Payment Module — Bridge & Adapter Demo ===");
+        System.out.println("Opening UI...");
+        PaymentUI.main(args);
     }
 }
